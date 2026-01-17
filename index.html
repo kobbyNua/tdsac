@@ -69,6 +69,21 @@
         }
         .nav-links a:hover { color: var(--secondary-color); }
 
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--primary-color);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 48, 87, 0.6), rgba(0, 48, 87, 0.6)), url('https://placehold.co/1920x800?text=Church+Building');
@@ -191,17 +206,26 @@
         @media (max-width: 768px) {
             /* Header & Navigation */
             .nav-bar {
-                flex-direction: column;
+                flex-wrap: wrap;
                 height: auto;
                 padding: 20px 0;
             }
 
+            .menu-toggle {
+                display: block;
+            }
 
             .nav-links {
+                display: none;
+                width: 100%;
                 flex-direction: column;
                 gap: 15px;
                 margin-top: 20px;
                 text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             /* Hero Section */
@@ -230,6 +254,11 @@
                 <img src=
                 "sda-logo.png" alt="Seventh-day Adventist Church Logo" style="height: 50px;">
                 <span>TDSDAC</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <nav class="nav-links">
                 <a href="#">Home</a>
@@ -343,5 +372,13 @@
         </div>
     </footer>
 
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
