@@ -130,7 +130,7 @@
 
         /* Live Radio Section */
         .live-radio {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(al-amin-mir-UHb9_urRPU0-unsplash.jpg);
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(al-amin-mir-UHb9_urRPU0-unsplash.jpg);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -139,6 +139,43 @@
             padding: 160px 0;
         }
         .live-radio .section-title { color: var(--white); }
+
+        /* Fluid Grid Items */
+        .fluid-grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+
+        .item-info, .item-study {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        .item-info::before, .item-study::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .item-info h3, .item-study h3 {
+            position: relative;
+            z-index: 1;
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+        }
 
         /* Footer */
         footer {
@@ -158,6 +195,7 @@
                 height: auto;
                 padding: 20px 0;
             }
+
 
             .nav-links {
                 flex-direction: column;
@@ -228,6 +266,23 @@
         </div>
     </section>
 
+    <section class="fluid-grid">
+        <div class="item-info" style="background-image: url('https://images.unsplash.com/photo-1567061480833-2815a7469f66?auto=format&fit=crop&w=800&q=80');">
+            <h3>Prayer meeting</h3>
+        </div>
+
+        <div class="item-info" style="background-image: url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=800&q=80');">
+            <h3>Weekly services</h3>
+        </div>
+
+        <div class="item-info" style="background-image: url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=800&q=80');">
+            <h3>Sermons</h3>
+        </div>
+
+        <div class="item-study" style="background-image: url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80');">
+            <h3>Community Service</h3>
+        </div>
+    </section>
     <section class="section">
         <div class="container">
             <h2 class="section-title">About Our Church</h2>
